@@ -1,0 +1,24 @@
+<%- include("./components/header") %>
+
+<form action="/addArticle" method="post">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Title</label>
+      <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="Title">
+      <% if ( err && err.title ) { %>
+      <div id="id" class="form-text ">
+        <%= err['title'].message %></div>
+      <% } %> 
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"><Article></Article></label>
+      <input type="text" name="article" class="form-control" id="exampleInputPassword1" placeholder="Article">
+      <% if ( err && err.article ) { %>
+        <div id="id" class="form-text ">
+          <%= err['title'].message %></div>
+        <% } %> 
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+<%- include("./components/footer") %>

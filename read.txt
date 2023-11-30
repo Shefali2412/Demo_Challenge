@@ -1,0 +1,59 @@
+1. import express & assign it to app
+2. use app.listen to run server
+3. make the mvc & config & public folders
+4. use the static to see public 
+5. import ejs
+6. use this app.use(express.urlencoded({extended:true})) to 
+7. make a mongoose file in config 
+8. import mongoose in mongoose file
+9. connect to db & check for connection in mongoose file
+10. to avoid depricatiion error use  mongoose.set('useFindAndModify', false); and topology in mongoose file
+11. if get punycode error use this code
+12 . make a router.js file in config & import express  & use express.router()
+13. in router.js use get(/)  & export router
+14. then import router to server.js & use app.use(router)
+15. then go and run localhost if its loading means working
+16. till now what we have done is must and necessary to set the server
+17 (req, res) => console.log(req)) we dont want this in router.js move it to controller .js
+18. export homepage from controller & impport it to router
+19. make a component folder in views 
+20 inside component make file header & footer 
+21. use include in index.ejs then add bootstrap to make pages
+22. make a article.js in models
+23. import mongoose in article & then set schema (blueprint of structure of doc)
+24. make an obkect in article & define key value
+25. give model name to mongoose Article': This is the name given to the Mongoose model.articleSchema: This is the Mongoose schema that you've defined earlier. It specifies the fields and their data types for documents in the "Article" collection.
+26. export Article in article
+27. import Article in controller
+28 in order to have Artical use find() & then & catch  in controller
+29 then run & o/p should be empty string[]
+30 then put render in .then with rresult
+31 add logic if /else in index.ejs 
+32 use bootstrap to add featurres & change name 
+33. router.get('/add-article', controller.postNewArticle) in router : name sould not be same
+34 goto controller & export postNewArticle
+35  do this const postNewArticle =(req,res) =>{
+    res.render('addArticle') in controller
+36 then make addArticle file in ejs  & usee bootstrap
+37  then check if Get or post in controller  & tell what to do
+38. router.get('/addArticle', controller.postNewArticle) change this to 'all' bcz we are making 2 requests
+39.use method & action in form
+40. const article = new Article(req.body)// instance -- in controller
+41. save article use then & catch in controller & navigate to home page
+42. make another file showone in views to move to this page
+43. in router use get the page showone
+43. export showONE in controller 
+44. then render Show one in controller
+45. use find by id in showonearticle in controller
+46. go to index ejs file & use <a href=/article/<% element.id %><%= element.title %></a in title 
+47. make update & delete btn in showONE
+48. in router do this router.all('/edit-article/:id', controller.updateOneArticle)
+49. in controller export & make function updateOneArticle
+50.copy addArticle file & make edit article file
+51. in edit article use <form action=/editArticle/<%= result.id %> method="POST">
+52. in edit file add value in <input>
+53. also add this in showone <a href=/editArticle/<%= result.id %> class="btn btn-primary">Update</a>
+54. in router do this router.get('delete-article/:id', controller.deleteOneArticle)
+55. in controller export & make function deleteOneArticle
+58. the in showOne do this <a href=delete-article/<%= result.id %> class="btn btn-warning">delete</a>
+59. add this to addArticle using if statement <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>

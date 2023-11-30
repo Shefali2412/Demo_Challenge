@@ -1,0 +1,25 @@
+
+<%- include("./components/header") %>
+<% if (result) {%>
+  <div class="card">
+    <div class="card-header">
+      
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= result.title %></h5>
+      <p class="card-text"><%= result.article %></p>
+      <a href=/editArticle/<%= result.id %> class="btn btn-primary">Update</a>
+      <a href=/deleteArticle/<%= result.id %> class="btn btn-warning">delete</a>
+    </div>
+  </div>
+
+    
+ <% } else { %>
+    there is no record
+ <% } %>  
+
+ 
+
+<%- include("./components/footer") %>
+  
+
